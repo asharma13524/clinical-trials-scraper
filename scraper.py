@@ -10,7 +10,7 @@ LINKS = ["http://www.ClinicalTrials.gov/api/query/study_fields?expr=agenus&field
          "http://www.ClinicalTrials.gov/api/query/study_fields?expr=anika&fields=LastUpdatePostDate,NCTId&max_rnk=100"]
 receiver = "mattwilliams1760@gmail.com"
 yag = yagmail.SMTP("mattwilliams1760@gmail.com",
-                   oauth2_file="./oauth2_creds.json")
+                   oauth2_file="~/oauth2_creds.json")
 
 
 def main():
@@ -31,6 +31,7 @@ def main():
                     contents=updated_trials,
                 )
             except Exception:
+                print(Exception)
                 print("Error, email was not sent")
         time.sleep(432000)
 
