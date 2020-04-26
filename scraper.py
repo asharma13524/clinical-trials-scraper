@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-from collections import Counter
 import requests
 import re
 from datetime import date, timedelta, time, datetime
