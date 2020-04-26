@@ -10,7 +10,7 @@ LINKS = ["http://www.ClinicalTrials.gov/api/query/study_fields?expr=agenus&field
          "http://www.ClinicalTrials.gov/api/query/study_fields?expr=anika&fields=LastUpdatePostDate,NCTId&max_rnk=100"]
 receiver = "mattwilliams1760@gmail.com"
 yag = yagmail.SMTP("mattwilliams1760@gmail.com",
-                   oauth2_file="~/oauth2_creds.json")
+                   "mattwilliams1760")
 
 
 def main():
