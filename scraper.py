@@ -26,7 +26,7 @@ def main():
         if trials:
             try:
                 yag.send(
-                    to="asharma13524@gmail.com",
+                    to=["asharma13524@gmail.com", "anilanish@yahoo.com"],
                     subject="Clinical Trial Update",
                     contents=updated_trials,
                 )
