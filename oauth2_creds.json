@@ -1,0 +1,11 @@
+{
+    "installed": {
+        "client_id": "380252214495-5ifmi326k9ha9frs51kt1i62j38h4n4h.apps.googleusercontent.com",
+        "project_id": "pythonscraper-275401",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "o4KjeA9-oTWXQbw-MJ3xsrRT",
+        "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
+    }
+}
