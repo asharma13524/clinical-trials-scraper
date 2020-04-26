@@ -10,7 +10,7 @@ LINKS = ["http://www.ClinicalTrials.gov/api/query/study_fields?expr=agenus&field
          "http://www.ClinicalTrials.gov/api/query/study_fields?expr=anika&fields=LastUpdatePostDate,NCTId&max_rnk=100"]
 receiver = "mattwilliams1760@gmail.com"
 yag = yagmail.SMTP("mattwilliams1760@gmail.com",
-                   "mattwilliams1760")
+                   oauth2_file="~/oauth2_creds.json")
 
 
 def main():
@@ -26,7 +26,7 @@ def main():
         if trials:
             try:
                 yag.send(
-                    to=["asharma13524@gmail.com", "anilanish@yahoo.com"],
+                    to="asharma13524@gmail.com",
                     subject="Clinical Trial Update",
                     contents=updated_trials,
                 )
@@ -39,7 +39,7 @@ def get_cleaned_dates(LINKS):
     cleaned_dates = []
     for link in LINKS:
         response = requests.get(link)
-        soup = BeautifulSoup(response.text, "lxml")
+        soup = BeautifulSoup(response.text, "html.parser")
         newsoup = soup.find_all("fieldvalue")
         CLEAN_FIELDVALUE = re.compile(r"\s+")
         cleaned_dates += [CLEAN_FIELDVALUE.sub(
