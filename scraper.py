@@ -5,7 +5,7 @@ from datetime import date, timedelta, time, datetime
 import time
 import yagmail
 
-
+# AGEN and ANIKA LINKS
 LINKS = ["http://www.ClinicalTrials.gov/api/query/study_fields?expr=agenus&fields=LastUpdatePostDate,NCTId&max_rnk=100",
          "http://www.ClinicalTrials.gov/api/query/study_fields?expr=anika&fields=LastUpdatePostDate,NCTId&max_rnk=100"]
 receiver = "mattwilliams1760@gmail.com"
@@ -30,7 +30,7 @@ def main():
                     subject="Clinical Trial Update",
                     contents=updated_trials,
                 )
-            except:
+            except Exception:
                 print("Error, email was not sent")
         time.sleep(432000)
 
