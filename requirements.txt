@@ -1,6 +1,6 @@
 beautifulsoup4==4.6.3
 DateTime==4.3
 regex==2018.1.10
-requests==2.19.1
+requests==2.20.0
 requests-toolbelt==0.8.0
 yagmail==0.11.224
