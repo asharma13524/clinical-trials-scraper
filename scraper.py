@@ -17,12 +17,12 @@ def main():
     while True:
         cleaned_dates = get_cleaned_dates(LINKS)
         trials = trial_update_checker(cleaned_dates)
-        #convert dates back to readabe format
-        trials2 = {k.strftime("%B %d %Y"): v for k, v in trials.items()}
+        #convert dates back to readable format
+        trials2 = {k: v.strftime("%B %d %Y") for k, v in trials.items()}
         updated_trials = []
         #add history link for each id in trials
-        for value in trials2.values():
-            updated_trials.append("https://clinicaltrials.gov/ct2/history/{url}".format(url=value))
+        for key in trials2.keys():
+            updated_trials.append("https://clinicaltrials.gov/ct2/history/{url}".format(url=key))
         if trials:
             try:
                 yag.send(
@@ -56,7 +56,7 @@ def trial_update_checker(cleaned_dates):
     for i in range(0, len(cleaned_dates), 2):
         cleaned_dates[i] = datetime.strptime(cleaned_dates[i], "%B %d, %Y")
         if cleaned_dates[i] > last_week:
-            trials[cleaned_dates[i]] = cleaned_dates[i+1]
+            trials[cleaned_dates[i+1]] = cleaned_dates[i]
     return trials
 
 
