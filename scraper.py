@@ -26,14 +26,15 @@ def main():
         if trials:
             try:
                 yag.send(
-                    to=["asharma13524@gmail.com", "anilanish@yahoo.com"],
+                    to=["asharma13524@gmail.com" "anilanish@yahoo.com"],
                     subject="Clinical Trial Update",
-                    contents=updated_trials,
+                    contents=updated_trials
                 )
             except Exception:
                 print(Exception)
                 print("Error, email was not sent")
         time.sleep(432000)
+
 
 def get_cleaned_dates(LINKS):
     # Get cleaned dates from request to each url
@@ -41,7 +42,7 @@ def get_cleaned_dates(LINKS):
     for link in LINKS:
         response = requests.get(link)
         soup = BeautifulSoup(response.text, "html.parser")
-        newsoup = soup.find_all("fieldvalue")
+        newsoup = soup.find_all(["fieldvalue"])
         CLEAN_FIELDVALUE = re.compile(r"\s+")
         cleaned_dates += [CLEAN_FIELDVALUE.sub(
             ' ', field.text.replace('\n', ',')).strip() for field in newsoup]
